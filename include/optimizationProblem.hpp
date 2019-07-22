@@ -53,11 +53,13 @@ public:
         if (!callback)
             throw std::runtime_error("Parameter(callback), Invalid Callback Error");
     }
+
     explicit Parameter(const double *dynamic_value_ptr) : dynamic_value_ptr(dynamic_value_ptr), parameterSource(ParameterSource::Pointer)
     {
         if (dynamic_value_ptr == NULL)
             throw std::runtime_error("Parameter(NULL), Null Pointer Error");
     }
+
     explicit Parameter(double const_value) : const_value(const_value), parameterSource(ParameterSource::Constant) {}
     Parameter() : const_value(0), parameterSource(ParameterSource::Constant) {}
     double get_value() const
@@ -98,6 +100,7 @@ struct Norm2
 // represents a constraint like
 //      norm2([p_1*x_1 + p_2*x_2 + ... + b_1,   p_3*x_3 + p_4*x_4 + ... + b_2 ])
 //        <= p_5*x_5 + p_6*x_6 + ... + b_3
+
 struct SecondOrderConeConstraint
 {
     Norm2 lhs;
