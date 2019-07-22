@@ -12,4 +12,4 @@ Download and compile with:
 `cmake ..`  
 `make`  
 
-See `example.cpp` for a basic usecase.
+See `example.cpp` for a basic use case.

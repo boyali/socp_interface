@@ -9,8 +9,10 @@ int main()
     op::SecondOrderConeProgram socp;
 
     // create tensor variables:
+
     // solution variable vector X
     socp.createTensorVariable("X", {3});
+
     // ||X||
     socp.createTensorVariable("norm2_X");
 
